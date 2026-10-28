@@ -1,3 +1,4 @@
 .env
 .venv
 python==3.12
+CLAUDE.md

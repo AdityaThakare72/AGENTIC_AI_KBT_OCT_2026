@@ -22,6 +22,8 @@ langchain-openai==1.6.7
 langchain-text-splitters==1.1.3
 langgraph==1.2.14
 langgraph-checkpoint-sqlite==3.1.1   # Session 7: memory saved to a file
+mcp==1.30.0                          # Day 3 Unit 3: MCP servers (keep below 2.0, see next line)
+langchain-mcp-adapters==0.3.2        # needs mcp<2; mcp 2.x renamed FastMCP to MCPServer
 
 # ---------- Embeddings and vector database  ----------
 sentence-transformers==6.1.0         # also installs PyTorch (CPU on Windows)
@@ -44,9 +46,25 @@ autogen-ext[openai]==0.7.5
 # ---------- Deployment ----------
 fastapi==0.143.0
 uvicorn==0.54.0
+streamlit==1.66.1                    # Day 3 projects, deployed on Streamlit Community Cloud
 
 # ---------- Fine-tuning (Session 1; runs on Colab, listed so it can also run locally) ----------
 transformers==5.19.0
 datasets==5.1.0
 peft==0.21.2
 accelerate==1.15.0
+
+# ---------- Additional libraries used by the course notebooks (added for Day 1 to Day 3) ----------
+# Optional second LLM provider: the setup cell (PROVIDER = "groq") in 02_LLM_as_service and every Day 3 lab
+langchain-groq==1.1.3
+# word_emb.ipynb: Word2Vec / GloVe word embeddings
+# gensim==4.4.0
+# ANN_Binary.ipynb: the Keras neural network. TensorFlow has no stable wheel for Python 3.14 yet,
+# so it installs only on Python 3.13 or older (use the Python 3.12 venv above, or run that notebook on Colab)
+# tensorflow==2.20.0; python_version < "3.14"   # 2.21 needs protobuf 6, which clashes with autogen 0.7.5
+# Already covered above, no extra line needed: torch (via sentence-transformers), numpy (via pandas),
+# httpx (Day 3 project APIs), google.colab (exists only on Colab; the setup cell falls back to .env)
+# lg/ LangGraph notebooks: DuckDuckGo search (11_tools), Tavily search (5-1, 12_multi_agent_supervisor)
+langchain-community==0.4.2
+langchain-tavily==0.2.18
+ddgs==9.16.1
