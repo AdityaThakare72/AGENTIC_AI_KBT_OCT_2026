@@ -14,7 +14,7 @@ llm = ChatOpenAI(
     openai_api_key=os.environ.get("OPENROUTER_API_KEY"),
     openai_api_base="https://openrouter.ai/api/v1",
     model_name="liquid/lfm-2.5-2.6b:free",
-    temperature= 1 
+    temperature= 0.7 
 )
 
 # --- Streamlit UI ---

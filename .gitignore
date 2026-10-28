@@ -2,3 +2,6 @@
 .venv
 python==3.12
 CLAUDE.md
+chroma_db
+.agents/
+.claude/
